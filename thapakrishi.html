@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thapa Krishi Firm</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Optional: Basic styling to prevent initial FOUC */
+        body { margin: 0; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Thapa Krishi Firm</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#order-form">Order Now</a></li> <!-- Link to the form section -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Freshness and Quality from Our Farm</h2>
+            <p>Providing the finest Milk and Fish directly from Thapa Krishi Firm.</p>
+            <!-- Add an attractive Order Now button -->
+            <button class="cta-button" id="showOrderFormBtn">Place Your Order Now!</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Thapa Krishi Firm is dedicated to sustainable farming practices to bring you the highest quality milk and fish. Located in Solmari,Jhapa, we ensure freshness from our farm to your table.</p>
+            <p>Learn more about our history and commitment to excellence.</p>
+            <!-- Add more detailed about info here -->
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="istockphoto-120879706-612x612.jpg" alt="Fresh Milk"> <!-- Replace with actual image -->
+                    <h3>Pure & Fresh Milk</h3>
+                    <p>Our milk comes from healthy, well-cared-for cattle, ensuring purity, nutrition, and a delicious taste. <span class="price-display">Price: <span id="milkPriceDisplay">[Price per Liter]</span>/ Liter</span></p> <!-- Added price display -->
+                     <button class="order-product-button" data-product="milk">Order Milk</button> <!-- Optional: add buttons per product -->
+                </div>
+
+                <div class="product-item">
+                    <img src="images.jpeg" alt="Farm-Raised Fish"> <!-- Replace with actual image -->
+                    <h3>Healthy Farm-Raised Fish</h3>
+                    <p>We raise various species of fish in clean, controlled environments. Our fish are known for their quality, flavor, and nutritional value. <span class="price-display">Price: <span id="fishPriceDisplay">[Price per Kg]</span> / Kg</span></p> <!-- Added price display -->
+                     <button class="order-product-button" data-product="fish">Order Fish</button> <!-- Optional: add buttons per product -->
+                </div>
+            </div>
+             <!-- Optional: Add another Order Now button after products -->
+             <button class="cta-button" id="showOrderFormBtn2" style="margin-top: 30px;">Place Your Order Now!</button>
+        </div>
+    </section>
+
+    <!-- Wrap the order form in a div and hide it initially -->
+    <div id="orderFormContainer" class="hidden-form">
+        <section id="order-form">
+            <div class="container">
+                <h2>Place Your Order</h2>
+                <p>Please fill out the form below to place your order for milk and fish.</p>
+
+                <form id="thapaOrderForm" action="process_order.php" method="post">
+                    <!-- Customer Information -->
+                    <fieldset>
+                        <legend>Your Contact Information</legend>
+                        <label for="customer-name">Name:</label><br>
+                        <input type="text" id="customer-name" name="customer-name" required><br><br>
+
+                        <label for="customer-phone">Phone:</label><br>
+                        <input type="tel" id="customer-phone" name="customer-phone" required><br><br>
+
+                        <label for="customer-email">Email:</label><br>
+                        <input type="email" id="customer-email" name="customer-email"><br><br>
+
+                         <label for="delivery-address">Delivery Address:</label><br>
+                        <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea><br><br>
+                    </fieldset>
+
+                    <!-- Order Details -->
+                    <fieldset>
+                        <legend>Your Order</legend>
+                        <p>Enter quantities. Current prices: Milk <strong id="milkPrice">[Price per Liter]</strong> / Liter, Fish <strong id="fishPrice">[Price per Kg]</strong> / Kg</p> <!-- Added price display within form -->
+
+                        <div class="order-item">
+                            <h4>Milk</h4>
+                            <label for="milk-quantity">Quantity (Liters):</label>
+                            <input type="number" id="milk-quantity" name="milk-quantity" min="0" value="0">
+                        </div>
+
+                        <div class="order-item">
+                            <h4>Fish</h4>
+                            <label for="fish-type">Fish Type:</label>
+                            <input type="text" id="fish-type" name="fish-type" placeholder="e.g., Tilapia, Carp"><br><br>
+
+                            <label for="fish-quantity">Quantity (kg):</label>
+                            <input type="number" id="fish-quantity" name="fish-quantity" min="0" value="0" step="0.1">
+                        </div>
+
+                        <!-- Calculation Display -->
+                        <div class="order-total">
+                            <strong>Total Amount:</strong> <span id="orderTotal">0.00</span>
+                        </div>
+
+                        <label for="order-notes">Additional Notes:</label><br>
+                        <textarea id="order-notes" name="order-notes" rows="4"></textarea><br><br>
+
+                    </fieldset>
+
+                    <button type="submit">Submit Order Inquiry</button> <!-- Changed button text -->
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with Thapa Krishi Firm for inquiries or orders.</p>
+            <address>
+                <p><strong>Address:</strong> Solmari,Jhapa</p>
+                <p><strong>Phone:</strong> [9709882109]</p>
+                <p><strong>Email:</strong> <a href="mailto:[Your Email Here]">[thapakrishi@gmail.com]</a></p>
+            </address>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Thapa Krishi Firm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+</body>
+</html>

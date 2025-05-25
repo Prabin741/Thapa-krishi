@@ -1,0 +1,577 @@
+/* Basic Reset/Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Make container responsive */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px 0; /* Add vertical padding */
+}
+
+/* Header Styling */
+header {
+    background: #2c3e50; /* Dark blue/grey */
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: #3498db 3px solid; /* Blue accent */
+}
+
+header .container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center; /* Vertically center items */
+    padding: 0 20px; /* Add horizontal padding inside header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    display: flex; /* Arrange nav items in a row */
+}
+
+header nav ul li {
+    margin-left: 20px; /* Space between nav items */
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+header nav a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* Hero Section Styling */
+#hero {
+    background: url('hero-background.jpg') no-repeat center center/cover; /* Replace with a relevant farm image */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px; /* Large padding for a prominent section */
+    position: relative; /* Needed for overlay */
+    z-index: 1; /* Ensure text is above potential overlay */
+}
+
+/* Optional: Add an overlay for better text readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: -1; /* Behind the content */
+}
+
+
+#hero h2 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+#hero p {
+    font-size: 20px;
+}
+
+
+/* Section Styling */
+section {
+    padding: 40px 0; /* Padding for each section */
+    text-align: center; /* Center align content */
+}
+
+#about {
+    background-color: #ecf0f1; /* Light grey */
+}
+
+#products {
+    background-color: #fff; /* White */
+}
+
+#contact {
+    background-color: #bdc3c7; /* Medium grey */
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #2c3e50;
+}
+
+/* Product List Styling (using Flexbox for responsiveness) */
+.product-list {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 30px; /* Space between product items */
+    margin-top: 30px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 300px; /* Base width */
+    flex-grow: 1; /* Allow items to grow if space is available */
+    max-width: 400px; /* Max width for items */
+}
+
+.product-item img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+/* Contact Section Styling */
+#contact address {
+    font-style: normal; /* Remove default italic */
+    margin-bottom: 20px;
+}
+
+#contact address p {
+    margin: 5px 0;
+}
+
+/* Optional: Form styling (if you uncomment the form in HTML) */
+/*
+#contact form {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; // Include padding in element's total width/height
+}
+
+#contact form button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contact form button:hover {
+    background-color: #2980b9;
+}
+*/
+
+
+/* Footer Styling */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; /* Add space above footer */
+}
+
+/* --- RESPONSIVENESS --- */
+
+/* Using Media Queries to adjust layout for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Stack logo and nav vertically */
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Adjust spacing for stacked items */
+    }
+/* Order Form Section Styling */
+#order-form {
+    background-color: #ecf0f1; /* Light grey */
+    padding: 40px 0;
+    text-align: center;
+}
+
+#order-form h2 {
+     color: #2c3e50;
+     margin-bottom: 20px;
+}
+
+#order-form form {
+    max-width: 600px; /* Limit form width */
+    margin: 20px auto; /* Center form */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align form content to the left */
+}
+
+#order-form fieldset {
+    border: 1px solid #bdc3c7; /* Light border */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#order-form legend {
+    font-weight: bold;
+    color: #3498db;
+    padding: 0 10px;
+}
+
+
+#order-form label {
+    display: block; /* Labels on their own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#order-form input[type="text"],
+#order-form input[type="tel"],
+#order-form input[type="email"],
+#order-form input[type="number"],
+#order-form textarea {
+    width: 100%; /* Make inputs fill the container width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    font-size: 16px;
+}
+
+/* Specific styling for order item input groups */
+#order-form .order-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px dashed #bdc3c7;
+    border-radius: 4px;
+}
+
+#order-form .order-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#order-form .order-item label {
+    display: inline-block; /* Arrange label and input side-by-side if space allows */
+    width: 120px; /* Give labels a fixed width */
+    margin-right: 10px;
+    margin-bottom: 10px; /* Space below the label line */
+    font-weight: normal;
+}
+
+#order-form .order-item input[type="number"],
+#order-form .order-item input[type="text"] {
+     width: auto; /* Allow inputs to take natural width */
+     display: inline-block; /* Keep them inline */
+     margin-bottom: 10px; /* Space below the input line */
+     max-width: 150px; /* Prevent them from getting too wide */
+}
+
+
+#order-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#order-form button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block; /* Make button a block element */
+    width: 100%; /* Make button full width */
+    margin-top: 20px;
+}
+
+#order-form button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    #order-form form {
+        padding: 15px;
+    }
+
+    #order-form input[type="text"],
+    #order-form input[type="tel"],
+    #order-form input[type="email"],
+    #order-form input[type="number"],
+    #order-form textarea {
+        font-size: 14px; /* Reduce font size */
+        padding: 8px; /* Reduce padding */
+    }
+
+     #order-form .order-item label {
+         width: 90px; /* Adjust label width */
+         margin-right: 5px;
+     }
+
+     #order-form .order-item input[type="number"],
+     #order-form .order-item input[type="text"] {
+          max-width: 100px; /* Adjust input width */
+     }
+
+    #order-form button[type="submit"] {
+        font-size: 16px; /* Reduce button font size */
+        padding: 10px 20px;
+    }
+    /* ... (Previous CSS styles) ... */
+
+/* --- New Styles for Order Feature --- */
+
+/* Style for the CTA Button */
+.cta-button {
+    display: inline-block; /* Allows padding and margins */
+    background-color: #3498db; /* Blue */
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* If using an anchor tag */
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Style for the optional Order Product buttons */
+.order-product-button {
+     background-color: #2ecc71; /* Green */
+     color: white;
+     padding: 8px 15px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 14px;
+     margin-top: 10px;
+     transition: background-color 0.3s ease;
+}
+
+.order-product-button:hover {
+    background-color: #27ae60; /* Darker green */
+}
+
+
+/* Class to hide the form container initially */
+.hidden-form {
+    display: none;
+}
+
+/* Order Form Section Styling (Keep this from before, adjust if needed) */
+#order-form {
+    background-color: #ecf0f1;
+    padding: 40px 0;
+    text-align: center;
+}
+/* ... (rest of the #order-form styles like form, fieldset, inputs etc.) ... */
+#order-form form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#order-form fieldset {
+    border: 1px solid #bdc3c7;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#order-form legend {
+    font-weight: bold;
+    color: #3498db;
+    padding: 0 10px;
+}
+
+#order-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#order-form input[type="text"],
+#order-form input[type="tel"],
+#order-form input[type="email"],
+#order-form input[type="number"],
+#order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#order-form .order-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px dashed #bdc3c7;
+    border-radius: 4px;
+}
+
+#order-form .order-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#order-form .order-item label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+#order-form .order-item input[type="number"],
+#order-form .order-item input[type="text"] {
+     width: auto;
+     display: inline-block;
+     margin-bottom: 10px;
+     max-width: 150px;
+}
+
+#order-form textarea {
+    resize: vertical;
+}
+
+#order-form button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#order-form button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+
+/* Style for Price and Total Display */
+.price-display {
+    font-weight: bold;
+    color: #2ecc71; /* Green color */
+    display: block; /* Each on its own line in product description */
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.order-total {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda; /* Light green background */
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 4px;
+    text-align: center;
+    font-size: 20px;
+    color: #155724; /* Dark green text */
+}
+
+.order-total strong {
+    margin-right: 10px;
+}
+
+/* ... (Previous Media Queries) ... */
+    #hero {
+        padding: 60px 20px; /* Reduce padding on smaller screens */
+    }
+
+    #hero h2 {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    #hero p {
+        font-size: 18px; /* Reduce font size */
+    }
+
+    .product-list {
+         flex-direction: column; /* Stack product items vertically */
+         align-items: center; /* Center stacked items */
+    }
+
+    .product-item {
+        width: 90%; /* Make items take up more width */
+        max-width: none; /* Remove max-width restriction */
+    }
+
+    section h2 {
+        font-size: 24px; /* Reduce section heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px; /* Further reduce heading size */
+    }
+
+    header nav a {
+        font-size: 14px; /* Further reduce nav font size */
+    }
+
+     .container {
+         width: 95%; /* Use slightly more width on very small screens */
+     }
+}
